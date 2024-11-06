@@ -34,11 +34,27 @@ The `latest` tag will automatically point to the latest build. That build will s
 
 If building on Fedora Atomic, you can generate an offline ISO with the instructions available [here](https://blue-build.org/learn/universal-blue/#fresh-install-from-an-iso). These ISOs cannot unfortunately be distributed on GitHub for free due to large sizes, so for public projects something else has to be used for hosting.
 
-## Updating
+## Maintanance
+
+### Pinning
+
+To pin a 'safe' build:
+```
+sudo ostree admin pin 0
+```
+
+### Checking status
+
+To check local status:
+```
+rpm-ostree status
+```
+
+### Updating
 
 To update to the latest signed build:
 ```
-rpm-ostree update ostree-image-signed:docker://ghcr.io/sgbonney/fluidbuild:latest
+rpm-ostree update
 ```
 
 ## Verification
