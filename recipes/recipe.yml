@@ -23,6 +23,7 @@ modules:
       - ffmpeg
       - syncthing
       - gnome-boxes
+      - stow
       # - micro
       # - starship
     remove:
@@ -30,7 +31,6 @@ modules:
       - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
       - gnome-tour
       - gnome-initial-setup
-      - gnome-system-monitor
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
