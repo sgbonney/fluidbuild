@@ -22,13 +22,15 @@ modules:
       - emacs
       - ffmpeg
       - syncthing
+      - gnome-boxes
       # - micro
       # - starship
     remove:
-      # example: removing firefox (in favor of the flatpak)
-      # "firefox" is the main package, "firefox-langpacks" is a dependency
       - firefox
       - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+      - gnome-tour
+      - gnome-initial-setup
+      - gnome-system-monitor
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
@@ -49,8 +51,13 @@ modules:
         - ch.protonmail.protonmail-bridge
         - org.videolan.VLC
         - com.github.jeromerobert.pdfarranger
-        # - org.mozilla.firefox
-        # - org.gnome.Loupe
+        - org.gnome.Calculator
+        - org.gnome.Calendar
+        - org.gnome.clocks
+        - org.gnome.TextEditor
+        - org.gnome.Loupe
+        - org.gnome.Evince
+        - org.mozilla.Thunderbird
         # - one.ablaze.floorp//lightning # This is an example of flatpak which has multiple branches in selection (flatpak//branch).
       # Flatpak runtimes are not supported (like org.winehq.Wine//stable-23.08),
       # only normal flatpak applications are (like Floorp Lightning web browser in this example).
