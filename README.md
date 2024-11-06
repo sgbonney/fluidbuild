@@ -38,21 +38,21 @@ If building on Fedora Atomic, you can generate an offline ISO with the instructi
 
 ### Pinning
 
-To pin a 'safe' build:
+Pin a 'safe' build:
 ```
 sudo ostree admin pin 0
 ```
 
 ### Checking status
 
-To check local status:
+Check local status:
 ```
 rpm-ostree status
 ```
 
 ### Updating
 
-To update to the latest signed build:
+Update to the latest signed build:
 ```
 rpm-ostree update
 ```
