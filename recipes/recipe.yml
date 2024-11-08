@@ -24,6 +24,7 @@ modules:
       - syncthing
       - gnome-boxes
       - stow
+      - gnome-shell-extension-pop-shell
       # - micro
       # - starship
     remove:
