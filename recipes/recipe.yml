@@ -20,7 +20,7 @@ modules:
       # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
     install:
       - emacs
-      - ffmpeg
+      # - ffmpeg
       - syncthing
       - gnome-boxes
       - stow
@@ -30,8 +30,6 @@ modules:
     remove:
       - firefox
       - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
-      - gnome-tour
-      - gnome-initial-setup
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
