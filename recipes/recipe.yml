@@ -32,6 +32,12 @@ modules:
       - gnome-tour
       - gnome-initial-setup
 
+  - type: brew
+    nofile-limits: true # increase nofile limits
+    brew-analytics: false # disable telemetry
+    install:
+      - pandoc
+
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
     system:
@@ -67,4 +73,3 @@ modules:
       # - org.gnome.eog
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
-
