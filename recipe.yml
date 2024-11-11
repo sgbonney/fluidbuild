@@ -1,0 +1,75 @@
+# image will be published to ghcr.io/<user>/<name>
+name: fluidbuild
+# description will be included in the image's metadata
+description: This is my personal OS image.
+
+# the base image to build on top of (FROM) and the version tag to use
+base-image: ghcr.io/ublue-os/silverblue-main
+image-version: 41 # latest is also supported if you want new updates ASAP
+
+# module configuration, executed in order
+# you can include multiple instances of the same module
+modules:
+  - type: files
+    files:
+      - source: system
+        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+
+  - type: rpm-ostree
+    repos:
+      # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
+    install:
+      - emacs
+      - ffmpeg
+      - syncthing
+      - gnome-boxes
+      - stow
+      # - micro
+      # - starship
+    remove:
+      - firefox
+      - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+      - gnome-tour
+      - gnome-initial-setup
+
+  - type: brew
+  nofile-limits: true # increase nofile limits
+  brew-analytics: false # disable telemetry
+  install:
+    - pandoc
+
+  - type: default-flatpaks
+    notify: true # Send notification after install/uninstall is finished (true/false)
+    system:
+      # If no repo information is specified, Flathub will be used by default
+      # repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
+      # repo-name: flathub
+      # repo-title: "Flathub (system-wide)" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
+      install:
+        - io.gitlab.librewolf-community
+        - org.keepassxc.KeePassXC
+        - org.signal.Signal
+        - org.asamk.SignalCli # use Signal in terminal
+        - io.github.ungoogled_software.ungoogled_chromium
+        - com.calibre_ebook.calibre
+        - org.torproject.torbrowser-launcher
+        - com.protonvpn.www
+        - ch.protonmail.protonmail-bridge
+        - org.videolan.VLC
+        - com.github.jeromerobert.pdfarranger
+        - org.gnome.Calculator
+        - org.gnome.Calendar
+        - org.gnome.clocks
+        - org.gnome.TextEditor
+        - org.gnome.Loupe
+        - org.gnome.Evince
+        - org.mozilla.Thunderbird
+        - org.fedoraproject.MediaWriter
+        # - one.ablaze.floorp//lightning # This is an example of flatpak which has multiple branches in selection (flatpak//branch).
+      # Flatpak runtimes are not supported (like org.winehq.Wine//stable-23.08),
+      # only normal flatpak applications are (like Floorp Lightning web browser in this example).
+      # Installing different branches of the same Flatpak is not supported.
+      remove:
+      # - org.gnome.eog
+
+  - type: signing # this sets up the proper policy & signing files for signed images to work fully
