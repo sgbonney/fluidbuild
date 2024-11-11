@@ -33,10 +33,10 @@ modules:
       - gnome-initial-setup
 
   - type: brew
-  nofile-limits: true # increase nofile limits
-  brew-analytics: false # disable telemetry
-  install:
-    - pandoc
+    nofile-limits: true # increase nofile limits
+    brew-analytics: false # disable telemetry
+    install:
+      - pandoc
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
