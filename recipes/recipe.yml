@@ -35,8 +35,12 @@ modules:
   - type: brew
     nofile-limits: true # increase nofile limits
     brew-analytics: false # disable telemetry
-    install:
-      - pandoc
+    # install:
+      # - pandoc
+
+  - type: script
+    snippets:
+      - "brew install pandoc"
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
