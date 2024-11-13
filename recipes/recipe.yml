@@ -35,9 +35,20 @@ modules:
   - type: brew
     nofile-limits: true # increase nofile limits
     brew-analytics: false # disable telemetry
-    install:
-      - ffmpeg
-      - pandoc
+    # install:
+      # - pandoc
+
+  - type: yafti
+    properties:
+      mode: "run-on-change"
+      path: "~/.config/yafti/last-run"
+    actions:
+      pre:
+        - run: brew update
+        - run: brew install ffmpeg
+        - run: brew install pandoc
+      post:
+        - notify-send "Homebrew setup successful"
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
