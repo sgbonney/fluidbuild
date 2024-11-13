@@ -20,7 +20,7 @@ modules:
       # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
     install:
       - emacs
-      - ffmpeg
+      # - ffmpeg
       - syncthing
       - gnome-boxes
       - stow
@@ -36,6 +36,7 @@ modules:
     nofile-limits: true # increase nofile limits
     brew-analytics: false # disable telemetry
     install:
+      - ffmpeg
       - pandoc
 
   - type: default-flatpaks
