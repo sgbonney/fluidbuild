@@ -22,7 +22,6 @@ modules:
       - emacs
       - syncthing
       - gnome-boxes
-      - stow
       # - micro
       # - starship
     remove:
