@@ -20,7 +20,6 @@ modules:
       # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
     install:
       - emacs
-      # - ffmpeg
       - syncthing
       - gnome-boxes
       - stow
