@@ -36,19 +36,8 @@ modules:
     nofile-limits: true # increase nofile limits
     brew-analytics: false # disable telemetry
     # install:
+      # - ffmpeg
       # - pandoc
-
-  - type: yafti
-    properties:
-      mode: "run-on-change"
-      path: "~/.config/yafti/last-run"
-    actions:
-      pre:
-        - run: brew update
-        - run: brew install ffmpeg
-        - run: brew install pandoc
-      post:
-        - run: notify-send "Homebrew setup successful"
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
@@ -77,6 +66,7 @@ modules:
         - org.gnome.Evince
         - org.mozilla.Thunderbird
         - org.fedoraproject.MediaWriter
+        - io.mpv.Mpv
         # - one.ablaze.floorp//lightning # This is an example of flatpak which has multiple branches in selection (flatpak//branch).
       # Flatpak runtimes are not supported (like org.winehq.Wine//stable-23.08),
       # only normal flatpak applications are (like Floorp Lightning web browser in this example).
