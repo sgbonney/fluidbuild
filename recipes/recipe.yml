@@ -33,10 +33,6 @@ modules:
   - type: brew
     nofile-limits: true # increase nofile limits
     brew-analytics: false # disable telemetry
-    # install:
-      # - ffmpeg
-      # - mpv
-      # - pandoc
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
@@ -65,6 +61,7 @@ modules:
         - org.gnome.Evince
         - org.mozilla.Thunderbird
         - org.fedoraproject.MediaWriter
+        - it.mijorus.gearlever # launch appimages
         # - one.ablaze.floorp//lightning # This is an example of flatpak which has multiple branches in selection (flatpak//branch).
       # Flatpak runtimes are not supported (like org.winehq.Wine//stable-23.08),
       # only normal flatpak applications are (like Floorp Lightning web browser in this example).
