@@ -53,7 +53,7 @@ modules:
         - ch.protonmail.protonmail-bridge
         - org.videolan.VLC
         - com.github.jeromerobert.pdfarranger
-        - org.gnome.Calculator
+        # - org.gnome.Calculator
         - org.gnome.Calendar
         - org.gnome.clocks
         - org.gnome.TextEditor
