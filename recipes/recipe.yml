@@ -36,7 +36,12 @@ modules:
     brew-analytics: false # disable telemetry
 
   - type: chezmoi
+    install_chezmoi: true 
     repository: "https://github.com/sgbonney/dotfiles.git" # my dotfiles repo
+    run_every: '1d' 
+    wait_after_boot: '5m' 
+    disable_init: false 
+    disable_update: false
     file-conflict-policy: replace # override changed files with those from the repo
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
