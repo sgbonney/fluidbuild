@@ -36,7 +36,8 @@ modules:
     brew-analytics: false # disable telemetry
 
   - type: chezmoi
-    repository: "https://github.com/sgbonney/dotfiles"
+    repository: https://github.com/sgbonney/dotfiles
+    branch: main
     file-conflict-policy: replace # override changed files with those from the repo
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
