@@ -16,8 +16,6 @@ modules:
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
   - type: rpm-ostree
-    repos:
-      # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
     install:
       - emacs
       - keepassxc
@@ -27,13 +25,13 @@ modules:
       # - starship
     remove:
       - firefox
-      - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+      - firefox-langpacks
       - gnome-tour
       - gnome-initial-setup
 
   - type: brew
-    nofile-limits: true # increase nofile limits
-    brew-analytics: false # disable telemetry
+    nofile-limits: true
+    brew-analytics: false
 
   - type: chezmoi
     repository: https://github.com/sgbonney/dotfiles
