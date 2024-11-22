@@ -21,7 +21,6 @@ modules:
       - keepassxc
       - syncthing
       - gnome-boxes
-      - gopass
       # - micro
       # - starship
     remove:
