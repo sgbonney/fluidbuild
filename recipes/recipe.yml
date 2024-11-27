@@ -20,7 +20,6 @@ modules:
       - emacs
       - keepassxc
       - syncthing
-      - gnome-boxes
       # - micro
       # - starship
     remove:
