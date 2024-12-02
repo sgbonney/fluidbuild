@@ -20,7 +20,7 @@ modules:
       - emacs
       - keepassxc
       - syncthing
-      - enchant
+      - enchant2-devel
       # - micro
       # - starship
     remove:
