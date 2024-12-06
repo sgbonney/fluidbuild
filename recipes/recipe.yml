@@ -20,10 +20,9 @@ modules:
       - emacs
       - keepassxc
       - syncthing
-      - enchant2-devel
-      - backintime-qt
+      - gnome-boxes
       # - micro
-      # - starship
+      - starship
     remove:
       - firefox
       - firefox-langpacks
@@ -36,5 +35,7 @@ modules:
 
   - type: chezmoi
     repository: https://github.com/sgbonney/dotfiles
+    branch: main
+    file-conflict-policy: replace # override changed files with those from the repo
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
