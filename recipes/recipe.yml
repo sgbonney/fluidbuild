@@ -4,7 +4,7 @@ name: fluidbuild
 description: This is my personal OS image.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-main
+base-image: ghcr.io/ublue-os/sericea-main
 image-version: 41 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -20,14 +20,11 @@ modules:
       - emacs
       - keepassxc
       - syncthing
-      - gnome-boxes
-      # - micro
-      - starship
+      - enchant2-devel
+      - backintime-qt
     remove:
       - firefox
       - firefox-langpacks
-      - gnome-tour
-      - gnome-initial-setup
 
   - type: brew
     nofile-limits: true
@@ -35,7 +32,5 @@ modules:
 
   - type: chezmoi
     repository: https://github.com/sgbonney/dotfiles
-    branch: main
-    file-conflict-policy: replace # override changed files with those from the repo
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
