@@ -22,6 +22,7 @@ modules:
       - syncthing
       - enchant2-devel
       - backintime-qt
+      - gnome-disk-utility
     remove:
       - firefox
       - firefox-langpacks
