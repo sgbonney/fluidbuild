@@ -23,6 +23,7 @@ modules:
       - enchant2-devel
       - backintime-qt
       - gnome-disk-utility
+      - darkman
     remove:
       - firefox
       - firefox-langpacks
