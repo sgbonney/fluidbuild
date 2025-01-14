@@ -24,7 +24,6 @@ modules:
       - backintime-qt
       - gnome-disk-utility
     remove:
-      - gnome-keyring
       - firefox
       - firefox-langpacks
 
