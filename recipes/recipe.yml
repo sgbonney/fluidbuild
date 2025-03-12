@@ -22,11 +22,11 @@ modules:
       - syncthing
       - enchant2-devel
       - backintime-qt
-      - gnome-disk-utility
-      - darkman
     remove:
       - firefox
       - firefox-langpacks
+      - gnome-tour
+      - gnome-initial-setup
 
   - type: default-flatpaks
     system:
