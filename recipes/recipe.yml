@@ -16,7 +16,6 @@ modules:
       - keepassxc
       - syncthing
       - enchant2-devel
-      - backintime-qt
     remove:
       - firefox
       - firefox-langpacks
