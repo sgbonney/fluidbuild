@@ -4,6 +4,7 @@ description: A personal OS image based on Fedora, very lightly customised.
 base-image: ghcr.io/ublue-os/silverblue-main
 image-version: latest
 
+modules:
   - type: files
     files:
       - source: system
