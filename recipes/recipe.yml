@@ -34,4 +34,9 @@ modules:
   - type: chezmoi
     repository: https://github.com/sgbonney/dotfiles
 
+  - type: systemd
+    user:
+      enabled:
+        - syncthing.service
+
   - type: signing
