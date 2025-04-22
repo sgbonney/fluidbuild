@@ -16,6 +16,7 @@ modules:
       - keepassxc
       - syncthing
       - enchant2-devel
+      - gnome-tweaks
     remove:
       - firefox
       - firefox-langpacks
